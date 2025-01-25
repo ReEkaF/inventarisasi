@@ -40,11 +40,12 @@ Aplikasi Sistem Inventaris Sekolah adalah suatu proyek yang bertujuan untuk mela
 > - PHP 8.1+ dan MySQL/MariaDB atau menggunakn [laragon](https://laragon.org/) untuk lebih mudahnya.
 >
 > ### Instalasi
-> - Tambahkan google client
+> - Tambahkan google client agar bisa login with google
 > - 
-> - GOOGLE_CLIENT_ID="454582461007-75i1l2bglu4sh5tfjefhjs2e7hb47cta.apps.googleusercontent.com"
-> - GOOGLE_CLIENT_SECRET="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"
+> - GOOGLE_CLIENT_ID="Client ID Anda"
+> - GOOGLE_CLIENT_SECRET="Clinet Secret anda"
 > - GOOGL_CALLBACK_REDIRECTS="http://127.0.0.1:8000/auth/google/call-back"
+>
 > - Clone/Download source code proyek ini.
 >
 > - Pastikan sudah masuk ke folder yang sesuai,dengan menulis di terminal:
@@ -98,6 +99,7 @@ Aplikasi Sistem Inventaris Sekolah adalah suatu proyek yang bertujuan untuk mela
 > - email darus terdaftar di gmail dan database untuk bisa login
 > - jika ingin merubah database menggunakan selain MYSQL dapat dilakukan di `.env`
 > - dikarenakan menggunakan API dari Google maka akan ada google client dan lainnya di `.env` agar bisa menggunakn login with google
+> - disarankan untuk mendaftarkan di google cloud console untuk dapat mengakses login with google
 > - dikarenakan menggunakan starter kit laravel breeze beberapa path bawaan masih bisa diakses
 
 
