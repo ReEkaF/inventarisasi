@@ -1,66 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Inventaris Perpustakaan (SIP)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi Sistem Inventaris Sekolah adalah suatu proyek yang bertujuan untuk melakukan rekap inventaris dan peminjaman terhadap perpustakaan ,sehingga perpustakaan dapat Transaksi Peminjaman Buku dan Keluar MAsuknya Buku
 
-## About Laravel
+# Alur Penggunaan Sistem Inventaris Perpustakaan
+1. Admin masuk kedalam sistem dengan menggunakan email dan password yang telah terdaftar, anda juga bisa masuk dengan menggunakan google ,namun harus dipastikan bahwa emailo sudah ada di database 
+2. Admin kemudian dapat memilih menu yang diinginkan
+    1. Menu Dashboard
+        Pada menu ini tidak menampilkan apa apa 
+    2. Menu Jenis Buku
+        Disini adalah menu yang digunakan untuk mengeloala jenis buku ,disini admin bisa menambahkan jenis buku ,mengedit jenis buku dan menghapus jenis buku , namun harus dipastikan bahwa jenis buku ini sudah tidak ada kalau tidak tidak akan bisa dihapus.
+    3. Menu Buku
+        Disini adalah menu yang digunakan untuk mengelola buku , disini admin bisa menambahkan buku ,mengedit buku dan menghapus buku ,namun harus dipastikan bahwa buku ini sedang tidak ada di transaksi peminjamana kalau tidak tidak aklan bisa dihapus.
+    4. Menu Peminjaman
+        Disini adalam menu untuk mengelola peminjam , disini admin bisa menambahkan peminjam ,mengedit peminjam dan menghapus peminjam ,namun harus diperhatika bahwa hanya bisa dihapus jika peminjam tidak memiliki transaksi apapun.
+    5. Menu transakasi Peminjaman
+        Disini admin bisa mengelola transaksi untuk peminjaman , disini admin bisa menambahkan transaksi baru ,mengubah transaksi peminjaman menjadi telah dikembalikan ,admin juga bisa menghapus data transaksi yang diras sudah tidak relevan
+    6. Profile 
+        Admin bisa mengubah informasi basic dari akunnya ,mulai dari nama ,email dan password
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> [Instlasi & Cara penggunaan](#cara-penggunaan)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+>[!NOTE]
+>
+>## Framework dan Library Yang Digunakan
+>
+>- [Laravel 11](https://laravel.com/)------(Laravel-Breeze Starter Kit)
+>- [Tailwind CSS](https://tailwindcss.com/)
+>- [Flowbite Admin Template](https://flowbite.com/)
 
-## Learning Laravel
+## Cara Penggunaan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+> [!CAUTION]
+>
+> ### Persyaratan
+>
+> - [Composer](https://getcomposer.org/).
+> - PHP 8.1+ dan MySQL/MariaDB atau menggunakn [laragon](https://laragon.org/) untuk lebih mudahnya.
+>
+> ### Instalasi
+> - Tambahkan google client agar bisa login with google
+> - 
+> - GOOGLE_CLIENT_ID="Client ID Anda"
+> - GOOGLE_CLIENT_SECRET="Clinet Secret anda"
+> - GOOGL_CALLBACK_REDIRECTS="http://127.0.0.1:8000/auth/google/call-back"
+>
+> - Clone/Download source code proyek ini.
+>
+> - Pastikan sudah masuk ke folder yang sesuai,dengan menulis di terminal:
+>
+> - Install Depedencies yang diperlukan dengan menjalankan perintah di terminal :
+>   ```shell
+>   composer install
+>   ```
+> 
+> - Jika belum terdapat file `.env`, copy file `.env example` dan ubah menjadi `.env`
+> 
+> - Generate key pada code agar web dapat dijalankan dengan menulis di terminal :
+> 
+>   ```shell
+>   php artisan key:generate
+>   ```
+>   
+> - Install Dependencies yang lain unyuk tampilan dengan menjalankan perintah di terminal :
+> 
+>   ```shell
+>   npm install
+>   ```
+>
+> - jangan lupa untuk migrasi dan seeder databse dengan menjalankan perintah di terminal :
+>   ```shell
+>   php artisan migrate --seed
+>   ```
+> - jika ingin memuat ulang database ke bentuk semula dapat menggunakan perinta :
+>   ```shell
+>   php artisan migrate:fresh --seed
+>   ```
+> - untuk menjalankan perlu menulis perintah di dua terminal yang berbeda yaitu:
+>   ```shell
+>   php artisan serve
+>   ```
+> - dan
+>   ```shell
+>   npm run dev
+>   ```
+>
+> - Klik kanan localhost yang telah didapat dari perintah php artisan serve
+> - jangan lupa bahwa laragion/XAMPP harus menyala untuk connect ke PHPmyadmin
+> - jika terdapat eror mungkin perlu menjalankan perintah :
+>   ```shell
+>   composer update
+>   ```
+>
+> - untuk fitur login with google perlu menggunakan protocol HTTPS,jika tidak akan eror.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+> [!TIP]
+> - email darus terdaftar di gmail dan database untuk bisa login
+> - jika ingin merubah database menggunakan selain MYSQL dapat dilakukan di `.env`
+> - dikarenakan menggunakan API dari Google maka akan ada google client dan lainnya di `.env` agar bisa menggunakn login with google
+> - disarankan untuk mendaftarkan di google cloud console untuk dapat mengakses login with google
+> - dikarenakan menggunakan starter kit laravel breeze beberapa path bawaan masih bisa diakses
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+> ### Akun
+> - Akun admin 
+> - email : `andre.eka.ferdiansyah123@gmail.com`
+> - password : `admin123`
+>
+> Anda dapat menambahkan akun lain namun lewat code ataupun server
